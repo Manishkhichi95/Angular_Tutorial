@@ -1,0 +1,6 @@
+#lgbtn:active{
+color:lightgrey;
+}
+#lgbtn:hover{
+   background-color:red;
+}

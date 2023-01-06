@@ -1,0 +1,21 @@
+img{
+    border-radius:50px;
+}
+.main{
+    width:200px;
+    border-right: 3px solid grey;
+    margin-top:4%;
+}
+.it_id{
+    margin-left:45%;
+}
+span{
+    font-size:small;
+}
+a{
+    color: brown;
+}
+.major{
+    margin-top:7%;
+    width:80%;
+}

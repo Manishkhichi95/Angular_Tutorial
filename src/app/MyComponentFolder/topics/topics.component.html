@@ -1,0 +1,77 @@
+<div *ngIf="show" class="d-flex">
+
+    <div class="main pt-4">
+        <div *ngFor="let item of result.data" class="d-flex flex-column">
+            <div *ngIf="name.value==item.first_name">
+                <img src="{{item.avatar}}" alt="Image Not Available" width="100px" height="100px" class="ms-5 shadow">
+                <span class="d-block fs it_id"><b>Id:</b>{{item.id}}</span>
+                <span class="d-block fs ms-4"><b>Name:</b>{{name.value}} {{item.last_name}}</span>
+                <span class="d-block fs"><a href="mailto:{{item.email}}"><u><b>Email:</b>{{item.email}}</u></a></span>
+            </div>
+        </div>
+        <div class="mt-5">
+            <span class="d-block text-center fs-6" (click)="scroll(target)"><u>Introduction</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Template Binding</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Life Cycle Hook</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll3(target3)"><u>Communication</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Directives</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Services</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>API call</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Forms</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Validators</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Routing</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Custom Pipes</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Custom Directives</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>UI-Lib Angular Material</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Template Binding</u></span>
+            <span class="d-block text-center fs-6" (click)="scroll2(target2)"><u>Lazy Loading</u></span>
+
+        </div>
+    </div>
+    <div class="major ms-5">
+        <h1 #target><u>INTRODUCTION</u></h1>
+<p contenteditable="true" [(innerHTML)]="content" *ngIf="!save" (click)="saveBtn()" id="paragrph"></p>
+<p contenteditable="true" [(innerHTML)]="data" *ngIf="save" (click)="saveBtn()" id="paragrph"></p>
+<p contenteditable="true" *ngIf="save2" [(innerHTML)]="para" (click)="saveBtn()" id="paragrph"></p>
+<p contenteditable="true" *ngIf="redo" [(innerHTML)]="content" (click)="saveBtn()" id="paragrph"></p>
+<button *ngIf="visible" (click)="undo()">Redo</button>
+<button *ngIf="visible" (click)="saveContent()">Save</button>
+<h1 #target2><u>TEMPLATE BINDING</u></h1>
+    <p contenteditable="true">In an Angular template, a binding creates a live connection between a part of the UI created from a template (a DOM element, directive, or component) and 
+the model (the component instance to which the template belongs). This connection can be used to synchronize the view with the model, to notify the model 
+when an event or user action takes place in the view, or both. Angular's Change Detection algorithm is responsible for keeping the view and the model in sync.
+<br>
+<b>Examples of binding include:</b>     
+       <li>text interpolations</li>
+       <li>property binding</li>
+       <li>event binding</li>
+       <li>wo-way binding</li>
+Bindings always have two parts: a target which will receive the bound value, and a template expression which produces a value from the model.<br>
+<img src="../../../assets/Screenshot_20221031_112749.png" height="250px" width="100%" alt="Image not showing">
+</p>
+<h1 #target3><u>Communication</u></h1>
+<h3>Parent to child communication:-</h3>
+<h6>Step1: Parent Component TS file</h6>
+<img src="../../../assets/WhatsApp Image 2022-11-05 at 11.05.35.jpg" height="350px" width="100%" alt="">
+<p>Here s is an Object that we want to send to app-hello component (child component)</p>
+<h6>Step2:Parent Component HTML file</h6>
+<img src="../../../assets/parent_html.jpg" height="350px" width="100%" alt="">
+<p>Here s is passed to a variable sa in app-hello component (child component)</p>
+<h6>Step3:Child Component TS file</h6>
+<img src="../../../assets/child_ts .jpg" height="350px" width="100%" alt="">
+<p>Here a variable is created using @Input() (angular decorator that helps us with property binding for an input from parent)in app-hello component (child component)</p>
+<h6>Step4:Child Component HTML file</h6>
+<img src="../../../assets/child_html.jpg" height="350px" width="100%" alt="">
+<p>Here sa.name is assessed using double braces:<code>{{sa_name}}</code></p>
+<h3>Child to Parent communication:-</h3>
+<h6>Step1: Child Component TS file</h6>
+<img src="../../../assets/child_component_ouput.png" height="500px" width="100%" alt="">
+<p>Here, @Output and EventEmitter is used in child component to send data to parent component</p>
+<h6>Step1: Parent Component TS file</h6>
+<img src="../../../assets/parent_component_tss.png" height="350px" width="100%" alt="">
+<p>Here ,we want to change the value of show to true when an event (login button in clicked) occured in child component</p>
+<h6>Step1: Parent Component HTML file</h6>
+<img src="../../../assets/parent_component_html.png" height="350px" width="100%" alt="">
+<P>Here,display is emitted from child to parent when  btn_clickLogin() function is called in child component and the value of display becomes "show=true" in parent.</P>
+    </div>
+</div>
